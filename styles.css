@@ -36,7 +36,7 @@
         --color-accent: #0097fc4f;
         --color-bg: #131313;
         --color-bg-secondary: #555;
-        --color-link: #0097fc;
+        --color-link: #35aeff;
         --color-secondary: #e20de9;
         --color-secondary-accent: #e20de94f;
         --color-shadow: #bbbbbb20;
@@ -64,7 +64,8 @@ body {
     line-height: var(--line-height);
     margin: 0;
     overflow-x: hidden;
-    padding: 0;
+    padding-left: 6vw;
+    padding-right: 6vw;
 }
 
 footer,
@@ -72,7 +73,10 @@ header,
 main {
     margin: 0 auto;
     max-width: var(--width-content);
-    padding-bottom: 3rem;
+}
+
+footer, main {
+	padding-bottom: 3rem;
 }
 
 hr {
@@ -120,10 +124,6 @@ article header,
 div header,
 main header {
     padding-top: 0;
-}
-
-header {
-    text-align: var(--justify-important);
 }
 
 header a b,
@@ -243,9 +243,10 @@ ul li {
 }
 
 p {
+	hyphens: auto;
     margin: 0.75rem 0;
     padding: 0;
-    max-width: 700px;
+    max-width: 580px;
 }
 
 pre {
