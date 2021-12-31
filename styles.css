@@ -28,12 +28,14 @@
     --width-card-medium: 460px;
     --width-card-wide: 800px;
     --width-content: 1080px;
+    --selection-color: white;
+    --selection-background: black;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --color: #ccc;
-        --color-accent: #0097fc4f;
+        --color-accent: #202020;
         --color-bg: #131313;
         --color-bg-secondary: #555;
         --color-link: #35aeff;
@@ -43,11 +45,18 @@
         --color-table: #0097fc;
         --color-text: #ccc;
         --color-text-secondary: #aaa;
+        --selection-color: black;
+        --selection-background: white;
     }
 
     * {
     	color-scheme: dark;
     }
+}
+
+::selection {
+	color: var(--selection-color);
+	background: var(--selection-background);
 }
 
 /* Layout */
@@ -246,13 +255,13 @@ p {
 	hyphens: auto;
     margin: 0.75rem 0;
     padding: 0;
+    font-size: 18px;
     max-width: 580px;
 }
 
 pre {
     margin: 1rem 0;
     max-width: var(--width-card-wide);
-    padding: 1rem 0;
 }
 
 pre code,
@@ -261,6 +270,8 @@ pre samp {
     max-width: var(--width-card-wide);
     padding: 0.5rem 2rem;
     white-space: pre-wrap;
+    direction: ltr;
+    width: 80%;
 }
 
 small {
