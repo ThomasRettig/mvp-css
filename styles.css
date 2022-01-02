@@ -20,13 +20,14 @@
     --color-text: #000;
     --color-text-secondary: #999;
     --font-family: system-ui, sans-serif;
+    --font-family-mono: ui-monospace, "Consolas", monospace;
     --hover-brightness: 1.2;
     --justify-important: center;
     --justify-normal: left;
     --line-height: 1.5;
     --width-card: 285px;
     --width-card-medium: 460px;
-    --width-card-wide: 800px;
+    --width-card-wide: 625px;
     --width-content: 1080px;
     --selection-color: white;
     --selection-background: black;
@@ -38,7 +39,7 @@
         --color-accent: #202020;
         --color-bg: #131313;
         --color-bg-secondary: #555;
-        --color-link: #35aeff;
+        --color-link: #8ad0ff;
         --color-secondary: #e20de9;
         --color-secondary-accent: #e20de94f;
         --color-shadow: #bbbbbb20;
@@ -92,8 +93,19 @@ hr {
     background-color: var(--color-bg-secondary);
     border: none;
     height: 1px;
-    margin: 4rem 0;
+    margin: 2rem 0;   
+}
+
+hr[length=full] {
     width: 100%;
+}
+
+hr[length=mid] {
+    width: 45%;
+}
+
+hr[length=short] {
+    width: 10%;
 }
 
 section {
@@ -159,6 +171,7 @@ nav {
     justify-content: space-between;
     margin: 0 auto;
     max-width: var(--width-content);
+    margin-top: calc(5vh - 12px);
 }
 
 nav ul {
@@ -221,6 +234,13 @@ samp {
     padding: 0 0.5rem;
 }
 
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--font-family-mono);
+}
+
 details {
     margin: 1.3rem 0;
 }
@@ -262,6 +282,7 @@ p {
 pre {
     margin: 1rem 0;
     max-width: var(--width-card-wide);
+    overflow-x: auto;
 }
 
 pre code,
@@ -269,6 +290,8 @@ pre samp {
     display: block;
     max-width: var(--width-card-wide);
     padding: 0.5rem 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     white-space: pre-wrap;
     direction: ltr;
     width: 80%;
@@ -501,4 +524,9 @@ blockquote footer {
     font-size: small;
     line-height: var(--line-height);
     padding: 1.5rem 0;
+}
+
+/* Misc */
+dfn, abbr {
+    cursor: help;
 }
